@@ -43,7 +43,22 @@ contract RPS {
         _;
     }
 
-    function createRoom(Hand _hand) public payable isValidHand(_hand) returns (uint roomNum) {
+    // digest는 keccak256(encode(hand, time))한 결과값이고, time은 digest를 만들때 사용한 프로그램 실행 시간
+    function createRoom(bytes32 digest, uint256 time) public payable returns (uint roomNum) {
+        Hand _hand;
+
+        bytes32 tmp;
+        for(uint8 i = 0; i < 3; i++) {
+            tmp = keccak256(abi.encode(i, time));
+            if(tmp == digest) {
+                _hand = Hand(i);
+                break;
+            }
+
+            // 방장의 hand가 유효한 값이 아니면 error throw
+            require((i != 2), "Invalid hand");
+        }
+
         rooms[roomLen] = Game({
             betAmount: msg.value,
             gameStatus: GameStatus.STATUS_NOT_STARTED,
