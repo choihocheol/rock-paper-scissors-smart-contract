@@ -1,0 +1,29 @@
+{
+  "name": "rock-paper-scissors-smart-contract",
+  "version": "1.0.0",
+  "description": "가위 바위 보 게임을 smart contract로 구현했다.",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/choihocheol/rock-paper-scissors-smart-contract.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/choihocheol/rock-paper-scissors-smart-contract/issues"
+  },
+  "homepage": "https://github.com/choihocheol/rock-paper-scissors-smart-contract#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "web3": "^1.7.0"
+  },
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^2.0.3"
+  }
+}
