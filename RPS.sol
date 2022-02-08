@@ -4,6 +4,8 @@ pragma solidity ^0.8.11;
 contract RPS {
     constructor() payable {}
 
+    // event  PlayerCheck(Player player);
+
     enum Hand {
         rock, paper, scissors
     }
@@ -78,6 +80,8 @@ contract RPS {
         });
         roomNum = roomLen;
         roomLen = roomLen + 1;
+
+        // emit PlayerCheck(rooms[roomNum].originator);
     }
 
     function joinRoom(uint roomNum, Hand _hand) public payable isValidHand(_hand) {
@@ -89,6 +93,8 @@ contract RPS {
         });
         rooms[roomNum].betAmount = rooms[roomNum].betAmount + msg.value;
         compareHands(roomNum);
+
+        // emit PlayerCheck(rooms[roomNum].taker);
     }
 
     function payout(uint roomNum) public payable isPlayer(roomNum, msg.sender) {
