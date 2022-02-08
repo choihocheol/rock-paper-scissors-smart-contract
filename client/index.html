@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가위 바위 보</title>
+  </head>
+  <body>
+    <hr />
+
+    <h3>현재 연결된 메타마스크 지갑 주소</h3>
+    <h5 id="address"></h5>
+
+    <hr />
+
+    <div>
+      <input type="radio" id="rock" name="hand" value="rock" checked />
+      <label for="rock">바위</label>
+    </div>
+    <div>
+      <input type="radio" id="paper" name="hand" value="paper" />
+      <label for="paper">보</label>
+    </div>
+    <div>
+      <input type="radio" id="scissors" name="hand" value="scissors" />
+      <label for="scissors">가위</label>
+    </div>
+
+    <hr />
+
+    <div>
+      <label for="money">판돈<b>(ETH)</b></label>
+      <input type="text" id="money" />
+    </div>
+    <div>
+      <label for="roomNum">방 번호</label>
+      <input type="text" id="roomNum" />
+    </div>
+
+    <hr />
+
+    <input type="button" id="createBtn" value="방 만들기" />
+    <input type="button" id="joinBtn" value="방 입장하기" />
+    <input type="button" id="payOutBtn" value="결과 확인" />
+
+    <hr />
+
+    <script src="./modules/web3js/web3.min.js"></script>
+    <script src="./modules/RPS.abi.js"></script>
+    <script src="./client.js"></script>
+  </body>
+</html>
