@@ -5,7 +5,7 @@
 - Install metamask on your browser.
 - Create metamask wallet.
 
-## Qucik Start
+## Quick Start
 
 To get started this project, please follow few steps below:
 
